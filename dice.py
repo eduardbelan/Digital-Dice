@@ -11,12 +11,24 @@ class Dice:
 
     def ask_user(self):
         """let the user pick the attributes of the dice"""
-        try:
-            self.sides = int(input("Enter the number of sides: "))
-            self.dices = int(input("Enter the number of dices: "))
-            self.rolls = int(input("Enter the number of rolls: "))
-        except ValueError:
-            print("Invalid input. Enter a number.")
+        while True:
+            try:
+                self.sides = int(input("Enter the number of sides: "))
+                break
+            except ValueError:
+                print("Enter Sides.")
+        while True:
+            try:
+                self.dices = int(input("Enter the number of dices: "))
+                break
+            except ValueError:
+                print("Enter Dices.")
+        while True:
+            try:
+                self.rolls = int(input("Enter the number of rolls: "))
+                break
+            except ValueError:
+                print("Enter Rolls.")
         self.roll_dice()
 
     def roll_dice(self):
